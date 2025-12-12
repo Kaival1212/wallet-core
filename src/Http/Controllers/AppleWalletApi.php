@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\AppleDevices;
-use App\Models\LoyaltyCustomer;
-use App\Services\AppleWalletService;
+use KN\WalletCore\Models\AppleDevices;
+use KN\WalletCore\Models\LoyaltyCustomer;
+use KN\WalletCore\Services\AppleWalletService;
 use Illuminate\Support\Facades\Log;
 
 class AppleWalletApi extends Controller
