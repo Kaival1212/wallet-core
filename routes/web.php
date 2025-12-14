@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Response;
 
 
 Route::get('/wallet', function () {
-    return view('welcomeCustomerAddForm');
+    return view('walletcore::welcomeCustomerAddForm');
 })->name('home');
 
 Route::get('/google-wallet/{user}', function (LoyaltyCustomer $user) {

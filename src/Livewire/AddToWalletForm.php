@@ -55,6 +55,6 @@ class AddToWalletForm extends Component
 
     public function render()
     {
-        return view('livewire.add-to-wallet-form');
+        return view('walletcore::livewire.add-to-wallet-form');
     }
 }
