@@ -12,13 +12,13 @@
         public function register()
         {
             $this->mergeConfigFrom(
-                __DIR__.'/../config/AppleWalletService.php',
-                'AppleWalletService'
+                __DIR__.'/../config/appleWalletPass.php',
+                'appleWalletPass'
             );
 
             $this->mergeConfigFrom(
-                __DIR__.'/../config/GoogleWalletService.php',
-                'GoogleWalletService'
+                __DIR__.'/../config/googleWalletPass.php',
+                'googleWalletPass'
             );
         }
         public function boot()
@@ -35,8 +35,8 @@
 
             // Publish config files
             $this->publishes([
-                __DIR__.'/../config/AppleWalletService.php' => config_path('AppleWalletService.php'),
-                __DIR__.'/../config/GoogleWalletService.php' => config_path('GoogleWalletService.php'),
+                __DIR__.'/../config/appleWalletPass.php' => config_path('appleWalletPass.php'),
+                __DIR__.'/../config/googleWalletPass.php' => config_path('googleWalletPass.php'),
             ], 'walletcore-config');
         }
     }
