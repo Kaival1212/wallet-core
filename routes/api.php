@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AppleWalletApi;
+use KN\WalletCore\Http\Controllers\AppleWalletApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;

@@ -3,7 +3,7 @@
 namespace App\Services;
 
 use Byte5\PassGenerator;
-use App\Models\LoyaltyCustomer;
+use KN\WalletCore\Models\LoyaltyCustomer;
 use Pushok\AuthProvider\Token;
 use Illuminate\Support\Facades\Log;
 
