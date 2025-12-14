@@ -12,8 +12,13 @@
         public function register()
         {
             $this->mergeConfigFrom(
-                __DIR__.'/../config/walletcore.php',
-                'walletcore'
+                __DIR__.'/../config/AppleWalletService.php',
+                'AppleWalletService'
+            );
+
+            $this->mergeConfigFrom(
+                __DIR__.'/../config/GoogleWalletService.php',
+                'GoogleWalletService'
             );
         }
         public function boot()
@@ -27,8 +32,11 @@
             Livewire::component('walletcore.add-to-wallet-form', AddToWalletForm::class);
             // Load migrations
             $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+
+            // Publish config files
             $this->publishes([
-                __DIR__.'/../config/walletcore.php' => config_path('walletcore.php'),
+                __DIR__.'/../config/AppleWalletService.php' => config_path('AppleWalletService.php'),
+                __DIR__.'/../config/GoogleWalletService.php' => config_path('GoogleWalletService.php'),
             ], 'walletcore-config');
         }
     }
