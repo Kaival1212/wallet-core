@@ -1,11 +1,9 @@
 <?php
 
-namespace App\Livewire;
+namespace KN\WalletCore\Livewire;
 
-use App\Models\LoyaltyCustomer;
-use App\Services\AppleWalletService;
+use KN\WalletCore\Models\LoyaltyCustomer;
 use Livewire\Component;
-use App\Services\GoogleWalletService;
 
 class AddToWalletForm extends Component
 {
@@ -24,7 +22,6 @@ class AddToWalletForm extends Component
 
         $this->validate();
 
-        $googleWalletService = new GoogleWalletService();
         $user = new LoyaltyCustomer([
             'name' => $this->name,
             'email' => $this->email,

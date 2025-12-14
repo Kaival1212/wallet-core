@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace KN\WalletCore\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
