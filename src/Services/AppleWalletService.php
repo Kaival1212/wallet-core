@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace KN\WalletCore\Services;
 
 use Byte5\PassGenerator;
 use KN\WalletCore\Models\LoyaltyCustomer;

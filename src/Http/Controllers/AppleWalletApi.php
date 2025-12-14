@@ -1,14 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace KN\WalletCore\Http\Controllers;
 
 use Illuminate\Http\Request;
 use KN\WalletCore\Models\AppleDevices;
 use KN\WalletCore\Models\LoyaltyCustomer;
 use KN\WalletCore\Services\AppleWalletService;
 use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\Controller as BaseController;
 
-class AppleWalletApi extends Controller
+
+
+class AppleWalletApi extends BaseController
 {
 
     function registerDevice($deviceId, $passTypeId, $serialNumber, Request $request)

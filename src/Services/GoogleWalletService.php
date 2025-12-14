@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace KN\WalletCore\Services;
 
 use Google\Client;
 use Google\Service\Walletobjects\{LoyaltyClass,TextModuleData, LoyaltyObject, Image, Barcode, LoyaltyPoints, LoyaltyPointsBalance};

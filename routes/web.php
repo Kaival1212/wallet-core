@@ -8,11 +8,12 @@ use KN\WalletCore\Models\LoyaltyCustomer;
 use Illuminate\Support\Facades\Response;
 
 
-Route::get('/wallet', function () {
+Route::middleware('web')->get('/wallet', function () {
     return view('walletcore::welcomeCustomerAddForm');
-})->name('home');
+});
 
-Route::get('/google-wallet/{user}', function (LoyaltyCustomer $user) {
+
+Route::middleware('web')->get('/google-wallet/{user}', function (LoyaltyCustomer $user) {
     $service = new GoogleWalletService();
     $url = $service->createLoyaltyCardForCustomer($user);
     return redirect($url);
@@ -20,7 +21,7 @@ Route::get('/google-wallet/{user}', function (LoyaltyCustomer $user) {
 })->name('google.wallet');
 
 
-Route::get('/apple-pass/{user}', function (LoyaltyCustomer $user) {
+Route::middleware('web')->get('/apple-pass/{user}', function (LoyaltyCustomer $user) {
     $service = new AppleWalletService();
     $pkpass = $service->createLoyaltyCard($user);
 
