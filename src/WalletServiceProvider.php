@@ -1,23 +1,34 @@
-<?php
+    <?php
 
-namespace KN\WalletCore;
+    namespace KN\WalletCore;
 
-use App\Livewire\AddToWalletForm;
-use Illuminate\Support\ServiceProvider;
-use Livewire\Livewire;
+    use KN\WalletCore\Livewire\AddToWalletForm;
+    use Illuminate\Support\ServiceProvider;
+    use Livewire\Livewire;
 
-class WalletServiceProvider extends ServiceProvider
-{
-    public function boot()
+    class WalletServiceProvider extends ServiceProvider
     {
-        // Load routes
-        $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
-        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'walletcore');
-        
-        Livewire::component('add-to-wallet-form', AddToWalletForm::class);
-        // Load migrations
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        public function register()
+        {
+            $this->mergeConfigFrom(
+                __DIR__.'/../config/walletcore.php',
+                'walletcore'
+            );
+        }
+        public function boot()
+        {
+            // Load routes
+            $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
+            $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+
+            $this->loadViewsFrom(__DIR__.'/../resources/views', 'walletcore');
+            
+            Livewire::component('walletcore.add-to-wallet-form', AddToWalletForm::class);
+            // Load migrations
+            $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+            $this->publishes([
+                __DIR__.'/../config/walletcore.php' => config_path('walletcore.php'),
+            ], 'walletcore-config');
+        }
     }
-}

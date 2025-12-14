@@ -50,7 +50,7 @@
         ingredients, and culinary craftsmanship of Undivided North India. Join
         our loyalty program and enjoy exclusive rewards and benefits.
       </p>
-      <livewire:add-to-wallet-form />
+      <livewire:walletcore.add-to-wallet-form />
     </div>
   </body>
 </html>
