@@ -11,7 +11,7 @@ use App\Http\Controllers\Controller as BaseController;
 
 
 
-class AppleWalletApi extends BaseController
+class AppleWalletApi extends BaseController 
 {
 
     function registerDevice($deviceId, $passTypeId, $serialNumber, Request $request)
